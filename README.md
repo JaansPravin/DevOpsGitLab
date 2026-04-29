@@ -224,3 +224,113 @@ Run:
 Bash
 
 docker run -d -p 8081:80 mynginx
+
+✅ PART 6 – DOCKER COMMANDS (Minimum 10)
+Make sure Docker Desktop is running.
+
+1️⃣ Check version
+Bash
+
+docker --version
+2️⃣ Check running containers
+Bash
+
+docker ps
+3️⃣ Check all containers
+Bash
+
+docker ps -a
+4️⃣ Pull image
+Bash
+
+docker pull nginx
+5️⃣ List images
+Bash
+
+docker images
+6️⃣ Run container
+Bash
+
+docker run -d -p 8080:80 nginx
+7️⃣ Check running
+Bash
+
+docker ps
+Open browser:
+
+text
+
+localhost:8080
+8️⃣ Stop container
+Bash
+
+docker stop <container_id>
+9️⃣ Remove container
+Bash
+
+docker rm <container_id>
+🔟 Remove image
+Bash
+
+docker rmi nginx
+✅ 10 Docker commands done.
+
+✅ PART 7 – DOCKERFILE (Image Build)
+Inside folder:
+
+Bash
+
+touch Dockerfile
+Add content:
+
+Bash
+
+echo "FROM nginx" > Dockerfile
+Build image:
+
+Bash
+
+docker build -t mynginx .
+Run:
+
+Bash
+
+docker run -d -p 8081:80 mynginx
+✅ PART 8 – JENKINS BASIC FLOW
+In browser:
+
+text
+
+localhost:8080
+✅ Create New Item
+New Item
+Freestyle Project
+✅ Source Code Management
+Git
+Paste GitHub repo URL
+✅ Build Step
+For Java:
+
+text
+
+javac Hello.java
+java Hello
+For Python:
+
+text
+
+python script.py
+✅ Build Now
+✅ If Asked: Pipeline Script
+groovy
+
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building project'
+            }
+        }
+    }
+}
